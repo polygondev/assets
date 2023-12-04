@@ -1,0 +1,21 @@
+from microbit import *
+import radio
+
+print()
+tx = input()
+me = 'Callum'
+
+radio.config(channel=69) #remember to change this channel number
+radio.config(length=250)
+radio.on()
+
+print('Transmitting to channel', '69')
+radio.send(tx)
+
+while True:
+    rx = radio.receive()
+    if rx:
+        print(rx)
+        
+
+
